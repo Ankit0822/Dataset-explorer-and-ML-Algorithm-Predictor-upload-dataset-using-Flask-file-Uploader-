@@ -1,0 +1,32 @@
+{%extends "bootstrap/base.html" %}
+
+{% block content %}
+    <div class="container" style="background-color:cornflowerblue ;">
+        <div class="jumbotron" style="background-color: cornflowerblue;">
+            <h1 class="  display-3">Simplified Machine learning Dataset</h1>
+            <p>Simplify your machine learning and data Exploration(
+                Semi-Automated ML)</p>
+            <p><a href="{{ url_for('index')}}" type="button" class="btn btn-success">Refresh</a></p>
+        </div>
+        <div class="container">
+            <form class="form-group" action="{{ url_for('dataupload')}}"
+             enctype="multipart/form-data" method="post">
+                <input type="file" name="csv_data" style="margin-left: 50px;">
+                <input type="submit" class="btn btn-primary "
+                 style="margin-top: 20px; margin-left: 50px;">
+                <input type="reset" value="Reset" class="btn btn-danger"
+                 style="margin-top: 20px; margin-left: 30px;" >
+            </form>
+        </div>
+    </div>
+
+
+
+
+{% endblock %}
+
+{% block scripts %}
+
+{{ super() }}
+
+{% endblock %}
